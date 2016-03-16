@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.0/foundation.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <section ng-controller="TodoListController">
+      <div class="row">
+        <div class="medium-12 columns">
+          <span>{{ getRemaining() }} of {{ todos.length }} items remaining</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-6 columns">
+          <table>
+            <thead>
+              <tr>
+                <th width="200">&nbsp;</th>
+                <th>Item</th>
+                <th>Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="todo in todos">
+                <td><input type="checkbox" name="name" ng-model="todo.done"></td>
+                <td>{{ todo.task }}</td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" ng-model="newTodo" placeholder="New Todo">
+                </td>
+                <td>
+                  <button type="button" class="button" ng-click="addTodo()">Add it</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="todolist2.js"></script>
+  </body>
+</html>
