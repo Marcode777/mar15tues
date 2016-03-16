@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Use jQuery</title>
+  </head>
+  <body>
+
+      <h1 id="greeting"></h1>
+      <input id="name" type="text" placeholder="put your name in">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //--------Use jQuery to write code in between these two lines to make whatever you type inside the input automatically appear inside the h1
+            function typer(){
+              $("#name").on("keyup", function(){
+                var msg = $("#name").val()
+                $("#greeting").text("Hello!" + msg);
+              });
+            }
+            //--------
+          typer();
+        });
+
+    </script>
+
+  </body>
+</html>
